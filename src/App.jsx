@@ -1,13 +1,12 @@
 import Items from "./components/Items/Items";
-import ControlBar from "./components/ControlBar/ControlBar";
 import ShopContextProvider from "./store/shop-context";
-
+import Nav from "./components/Nav/Nav";
 import "./App.css";
 
 const App = () => {
   return (
     <ShopContextProvider>
-      <ControlBar />
+      <Nav />
       <Items />
     </ShopContextProvider>
   );

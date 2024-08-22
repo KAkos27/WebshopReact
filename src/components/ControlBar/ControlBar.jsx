@@ -14,17 +14,9 @@ const ControlBar = () => {
   return (
     <>
       {isControlBarVisible ? (
-        <img
-          className="control-bar__icon"
-          src={closeButton}
-          onClick={handleClickIcon}
-        />
+        <img className="icon" src={closeButton} onClick={handleClickIcon} />
       ) : (
-        <img
-          className="control-bar__icon"
-          src={controlBarIcon}
-          onClick={handleClickIcon}
-        />
+        <img className="icon" src={controlBarIcon} onClick={handleClickIcon} />
       )}
     </>
   );

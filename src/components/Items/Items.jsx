@@ -5,7 +5,7 @@ import noResult from "../../assets/ui-images/no-results.svg";
 import "./Items.css";
 
 const Items = () => {
-  const { baseItems } = useContext(ShopContext);
+  const { baseItems, addItemToCart } = useContext(ShopContext);
 
   return (
     <div className="items">
@@ -19,7 +19,7 @@ const Items = () => {
               <h2>{toy.title}</h2>
               <strong>{toy.description}</strong>
             </div>
-            <button>Kosárba</button>
+            <button onClick={() => addItemToCart(toy.id)}>Kosárba</button>
           </div>
         ))
       ) : (
