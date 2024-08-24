@@ -3,19 +3,16 @@ import { createPortal } from "react-dom";
 
 import "./Modal.css";
 
-const Modal = ({ onCloseModal, open, children }) => {
+const Modal = ({ className, open, children }) => {
   const modal = useRef();
 
   useEffect(() => {
-    open && modal.current.showModal();
+    open ? modal.current.showModal() : modal.current.close();
   }, [open]);
 
   return createPortal(
-    <dialog ref={modal} className="modal">
+    <dialog ref={modal} className={className}>
       {children}
-      <form method="dialog">
-        <button onClick={onCloseModal}>Ok</button>
-      </form>
     </dialog>,
     document.querySelector("#modal-root")
   );

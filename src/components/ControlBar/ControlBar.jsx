@@ -5,15 +5,15 @@ import closeButton from "../../assets/ui-images/close-button.svg";
 import "./ControlBar.css";
 
 const ControlBar = () => {
-  const [isControlBarVisible, setIsControlBarVisible] = useState(false);
+  const [isControlBarOpen, setIsControlBarOpen] = useState(false);
 
   const handleClickIcon = () => {
-    setIsControlBarVisible((prevState) => !prevState);
+    setIsControlBarOpen((prevState) => !prevState);
   };
 
   return (
     <>
-      {isControlBarVisible ? (
+      {isControlBarOpen ? (
         <img className="icon" src={closeButton} onClick={handleClickIcon} />
       ) : (
         <img className="icon" src={controlBarIcon} onClick={handleClickIcon} />

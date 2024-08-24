@@ -1,1 +1,68 @@
+.basket-modal {
+  -webkit-animation: slide-cart 0.5s forwards;
+  animation: slide-cart 0.5s forwards;
+  background-color: white;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #2c2c34;
+  left: 50%;
+  outline: none;
+  padding: 2rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 0;
+}
 
+@-webkit-keyframes slide-cart {
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes slide-cart {
+  100% {
+    top: 50%;
+  }
+}
+
+.modal-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.cart-item {
+  align-items: center;
+  border-bottom: 0.5px solid #2c2c34;
+  display: flex;
+  font-size: 1.2rem;
+  gap: 1rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  width: 60rem;
+}
+
+.cart-item strong:first-child {
+  margin-right: auto;
+}
+
+.cart-item button {
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem;
+  width: 1.5rem;
+}
+
+.cart-summary {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.cart-summary button {
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}

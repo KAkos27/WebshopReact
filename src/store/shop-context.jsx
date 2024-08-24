@@ -16,14 +16,26 @@ const ShopContextProvider = ({ children }) => {
   });
 
   const handleAddItem = (id) => {
-    const updatedItems = [...webShopState.items];
-    const filteredItem = updatedItems.filter((item) => item.id === id);
-    const itemToAdd = { ...filteredItem[0], quantity: 1 };
+    const copiedCart = [...webShopState.itemsInCart];
+    const itemInCartIndex = copiedCart.findIndex((item) => item.id === id);
 
-    setWebshopState((prevState) => ({
-      ...prevState,
-      itemsInCart: [itemToAdd, ...prevState.itemsInCart],
-    }));
+    if (itemInCartIndex === -1) {
+      const copiedItems = [...webShopState.items];
+      const filteredItem = copiedItems.find((item) => item.id === id);
+      const itemToAdd = { ...filteredItem, quantity: 1 };
+
+      setWebshopState((prevState) => ({
+        ...prevState,
+        itemsInCart: [itemToAdd, ...prevState.itemsInCart],
+      }));
+    } else {
+      copiedCart[itemInCartIndex].quantity++;
+
+      setWebshopState((prevState) => ({
+        ...prevState,
+        itemInCart: copiedCart,
+      }));
+    }
   };
 
   const contextValue = {
