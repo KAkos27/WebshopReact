@@ -4,10 +4,11 @@ import Modal from "../Modal/Modal";
 import { ShopContext } from "../../store/shop-context";
 import cartImage from "../../assets/ui-images/cart.svg";
 import closeImage from "../../assets/ui-images/close-button-black.svg";
+import noResults from "../../assets/ui-images/no-results.svg";
 import "./Basket.css";
 
 const Basket = () => {
-  const { cartItems } = useContext(ShopContext);
+  const { cartItems, updateItemQuantity } = useContext(ShopContext);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleModalState = () => {
@@ -40,9 +41,23 @@ const Basket = () => {
               return (
                 <div className="cart-item" key={item.id}>
                   <strong>{item.title}</strong>
-                  <button className="cart-button">-</button>
-                  <div>{item.quantity}db</div>
-                  <button className="cart-button">+</button>
+                  <button
+                    className="cart-button"
+                    onClick={() => {
+                      updateItemQuantity(item.id, false);
+                    }}
+                  >
+                    -
+                  </button>
+                  <p>{item.quantity}db</p>
+                  <button
+                    className="cart-button"
+                    onClick={() => {
+                      updateItemQuantity(item.id, true);
+                    }}
+                  >
+                    +
+                  </button>
                   <strong>{item.price * item.quantity}Ft</strong>
                 </div>
               );
@@ -54,8 +69,11 @@ const Basket = () => {
           </>
         ) : (
           <>
+            <img className="icon" src={noResults} alt="no results" />
             <h2>A kosár üres</h2>
-            <button onClick={handleModalState}>Ok</button>
+            <button className="cart-button" onClick={handleModalState}>
+              Ok
+            </button>
           </>
         )}
       </Modal>

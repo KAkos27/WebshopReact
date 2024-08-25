@@ -26,6 +26,10 @@
   }
 }
 
+.basket-modal h2 {
+  margin-bottom: 1.4rem;
+}
+
 .modal-header {
   align-items: center;
   display: flex;
@@ -49,9 +53,6 @@
 }
 
 .cart-item button {
-  border-radius: 0.5rem;
-  border: none;
-  padding: 0.5rem;
   width: 1.5rem;
 }
 
@@ -65,4 +66,21 @@
 .cart-summary button {
   border-radius: 0.5rem;
   padding: 0.8rem;
+}
+
+.cart-summary button:hover {
+  background-color: #2c2c34;
+}
+
+.cart-button {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem;
+  color: #2c2c34;
+}
+
+.cart-button:hover {
+  background-color: #a2a2ac;
+  color: white;
 }

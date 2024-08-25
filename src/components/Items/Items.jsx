@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 import { ShopContext } from "../../store/shop-context.jsx";
-import noResult from "../../assets/ui-images/no-results.svg";
+import noResults from "../../assets/ui-images/no-results.svg";
 import "./Items.css";
 
 const Items = () => {
@@ -24,7 +24,7 @@ const Items = () => {
         ))
       ) : (
         <div>
-          <img src={noResult} />
+          <img src={noResults} />
           <h1>Hoppá!</h1>
           <strong>Úgy tűnik nincs ilyen játék az adatbázisunkban</strong>
         </div>
