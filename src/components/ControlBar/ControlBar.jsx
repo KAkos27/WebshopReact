@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 
 import Modal from "../Modal/Modal";
+import { ShopContext } from "../../store/shop-context";
 import controlBarIcon from "../../assets/ui-images/control-bar-icon.svg";
 import closeButton from "../../assets/ui-images/close-button-black.svg";
-import { ShopContext } from "../../store/shop-context";
 import "./ControlBar.css";
 
 const ControlBar = () => {
