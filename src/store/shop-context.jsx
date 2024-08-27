@@ -5,6 +5,9 @@ import { TOYS } from "../data.js";
 export const ShopContext = createContext({
   baseItems: [],
   cartItems: [],
+  searchItem: () => {},
+  chooseCaregory: () => {},
+  chooseOrder: () => {},
   addItemToCart: () => {},
   updateItemQuantity: () => {},
 });
@@ -14,6 +17,60 @@ const ShopContextProvider = ({ children }) => {
     items: TOYS,
     itemsInCart: [],
   });
+
+  const handelItemSearch = (searchValue) => {
+    let filteredItems = [...TOYS];
+    if (searchValue.trim()) {
+      const copiedItems = [...TOYS];
+      filteredItems = copiedItems.filter((item) =>
+        item.title.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
+
+    setWebshopState((prevState) => ({
+      ...prevState,
+      items: filteredItems,
+    }));
+  };
+
+  const handelCategoryChoice = (event) => {
+    const category = event.target.value;
+    let filteredItems = [...TOYS];
+    if (category !== "empty") {
+      filteredItems = filteredItems.filter((item) =>
+        item.categories.includes(category)
+      );
+    }
+
+    setWebshopState((prevState) => ({
+      ...prevState,
+      items: filteredItems,
+    }));
+  };
+
+  const handleOrderChoice = (event) => {
+    const order = event.target.value;
+    let filteredItems = [...TOYS];
+
+    if (order === "alphabetic") {
+      filteredItems.sort((a, b) =>
+        a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1
+      );
+    }
+
+    if (order === "cheap") {
+      filteredItems.sort((a, b) => a.price - b.price);
+    }
+
+    if (order === "expensive") {
+      filteredItems.sort((a, b) => b.price - a.price);
+    }
+
+    setWebshopState((prevState) => ({
+      ...prevState,
+      items: filteredItems,
+    }));
+  };
 
   const handleAddItem = (id) => {
     const copiedCart = [...webshopState.itemsInCart];
@@ -61,6 +118,9 @@ const ShopContextProvider = ({ children }) => {
   const contextValue = {
     baseItems: webshopState.items,
     cartItems: webshopState.itemsInCart,
+    searchItem: handelItemSearch,
+    chooseCaregory: handelCategoryChoice,
+    chooseOrder: handleOrderChoice,
     addItemToCart: handleAddItem,
     updateItemQuantity: handleUpdateItem,
   };

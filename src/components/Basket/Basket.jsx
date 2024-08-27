@@ -18,12 +18,15 @@ const Basket = () => {
   let total = 0;
   return (
     <>
-      <img
-        className="basket-icon icon"
-        src={cartImage}
-        alt="basket-icon"
-        onClick={handleModalState}
-      />
+      <div>
+        <img
+          className="basket-icon icon"
+          src={cartImage}
+          alt="basket-icon"
+          onClick={handleModalState}
+        />
+      </div>
+
       <Modal className="basket-modal" open={modalIsOpen}>
         {cartItems.length ? (
           <>

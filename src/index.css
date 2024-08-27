@@ -5,13 +5,17 @@
 }
 
 body {
+  background-color: #31313a;
   color-scheme: dark;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #31313a;
 }
 
 button {
   cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }
 
 .icon {

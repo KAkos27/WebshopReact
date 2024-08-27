@@ -1,17 +1,32 @@
 .items {
   background-color: #6e6e79;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  border-radius: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
   height: 100%;
-  justify-content: center;
   margin: auto;
   margin-top: 10rem;
   padding: 4rem;
   width: 80vw;
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.search-bar {
+  border: none;
+  border-radius: 1rem;
+  height: 2rem;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  width: 24rem;
+}
+
+.search-bar:focus {
+  outline: none;
 }
 
 .card {
