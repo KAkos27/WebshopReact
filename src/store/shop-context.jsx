@@ -36,8 +36,8 @@ const ShopContextProvider = ({ children }) => {
 
   const handelCategoryChoice = (event) => {
     const category = event.target.value;
-
     let filteredItems = [...TOYS];
+
     if (category !== "empty") {
       filteredItems = filteredItems.filter((item) =>
         item.categories.includes(category)
