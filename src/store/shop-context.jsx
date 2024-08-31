@@ -18,11 +18,12 @@ const ShopContextProvider = ({ children }) => {
     itemsInCart: [],
   });
 
-  const handelItemSearch = (searchValue) => {
+  const handelItemSearch = (event) => {
+    const searchValue = event.target.value;
     let filteredItems = [...TOYS];
+
     if (searchValue.trim()) {
-      const copiedItems = [...TOYS];
-      filteredItems = copiedItems.filter((item) =>
+      filteredItems = filteredItems.filter((item) =>
         item.title.toLowerCase().includes(searchValue.toLowerCase())
       );
     }
@@ -35,6 +36,7 @@ const ShopContextProvider = ({ children }) => {
 
   const handelCategoryChoice = (event) => {
     const category = event.target.value;
+
     let filteredItems = [...TOYS];
     if (category !== "empty") {
       filteredItems = filteredItems.filter((item) =>
@@ -50,7 +52,7 @@ const ShopContextProvider = ({ children }) => {
 
   const handleOrderChoice = (event) => {
     const order = event.target.value;
-    let filteredItems = [...TOYS];
+    const filteredItems = [...TOYS];
 
     if (order === "alphabetic") {
       filteredItems.sort((a, b) =>

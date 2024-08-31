@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 
 import { ShopContext } from "../../store/shop-context.jsx";
 import noResults from "../../assets/ui-images/no-results.svg";
@@ -6,16 +6,10 @@ import "./Items.css";
 
 const Items = () => {
   const { baseItems, searchItem, addItemToCart } = useContext(ShopContext);
-  const searchRef = useRef();
 
   return (
     <div className="items">
-      <input
-        className="search-bar"
-        ref={searchRef}
-        type="text"
-        onKeyDown={() => searchItem(searchRef.current.value)}
-      />
+      <input className="search-bar" type="text" onKeyUp={searchItem} />
       <div className="items-container">
         {baseItems.length ? (
           baseItems.map((toy) => (
