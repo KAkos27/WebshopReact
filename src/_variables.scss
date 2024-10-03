@@ -1,0 +1,27 @@
+$box-shadow-value: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+$colors: (
+  "light": #a2a2ac,
+  "medium": #6e6e79,
+  "dark": #2c2c34,
+);
+
+$mobile: 800px;
+
+@function colors($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@mixin flex($align: center, $justify: center, $direction: row) {
+  align-items: $align;
+  display: flex;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}

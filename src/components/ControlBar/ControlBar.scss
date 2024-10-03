@@ -1,0 +1,25 @@
+@import "../../variables";
+
+.control-bar__modal {
+  background-color: white;
+  border: none;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: $box-shadow-value;
+  color: colors(dark);
+  height: 100vh;
+  outline: none;
+  width: 34rem;
+}
+
+.control-bar__selects {
+  @include flex($direction: column);
+  gap: 2rem;
+
+  select {
+    border-radius: 1rem;
+    height: 2rem;
+    padding: 0.5rem;
+    width: 70%;
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../variables";
+
+.basket-modal {
+  -webkit-animation: slide-cart 0.5s forwards;
+  animation: slide-cart 0.5s forwards;
+  background-color: white;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: $box-shadow-value;
+  color: colors(dark);
+  left: 50%;
+  outline: none;
+  padding: 2rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 0;
+
+  h2 {
+    margin-bottom: 1.4rem;
+  }
+}
+
+@-webkit-keyframes slide-cart {
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes slide-cart {
+  100% {
+    top: 50%;
+  }
+}
+
+.modal-header {
+  @include flex($justify: space-between);
+  margin-bottom: 2rem;
+}
+
+.cart-item {
+  @include flex;
+  border-bottom: 0.5px solid colors(dark);
+  font-size: 1.2rem;
+  gap: 1rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  width: 60rem;
+
+  strong:first-child {
+    margin-right: auto;
+  }
+
+  button {
+    width: 1.5rem;
+  }
+}
+
+.cart-summary {
+  @include flex($justify: space-between);
+  margin-top: 4rem;
+
+  button {
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+
+    &:hover {
+      background-color: colors(dark);
+    }
+  }
+}
+
+.cart-button {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem;
+  color: colors(dark);
+
+  &:hover {
+    background-color: colors(medium);
+    color: white;
+  }
+}

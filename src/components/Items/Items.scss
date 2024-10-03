@@ -1,0 +1,70 @@
+@import "../../variables";
+
+$card-width: 20rem;
+
+.items {
+  background-color: colors(medium);
+  border-radius: 2rem;
+  box-shadow: $box-shadow-value;
+  height: 100%;
+  margin: auto;
+  margin-top: 10rem;
+  padding: 4rem;
+  width: 80vw;
+}
+
+.items-container {
+  @include flex($align: stretch);
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @include mobile {
+    @include flex($direction: row);
+  }
+}
+
+.search-bar {
+  border: none;
+  border-radius: 1rem;
+  height: 2rem;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  width: 24rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.card {
+  @include flex($direction: column);
+  background-color: colors(light);
+  border-radius: 1rem;
+  box-shadow: $box-shadow-value;
+  color: white;
+  gap: 1rem;
+  overflow: hidden;
+  width: $card-width;
+  height: auto;
+
+  button {
+    margin-top: auto;
+    margin-bottom: 1rem;
+    width: 80%;
+    height: 2.4rem;
+  }
+}
+
+.card__image-container {
+  @include flex;
+  width: $card-width;
+  img {
+    width: $card-width;
+  }
+}
+
+.card__info-container {
+  @include flex($justify: flex-start, $direction: column);
+  gap: 1rem;
+  padding: 1rem;
+}

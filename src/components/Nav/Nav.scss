@@ -1,0 +1,7 @@
+@import "../../variables";
+
+.nav {
+  @include flex($justify: space-between);
+  position: sticky;
+  top: 0;
+}

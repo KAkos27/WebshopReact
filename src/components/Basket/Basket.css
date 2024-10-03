@@ -1,5 +1,4 @@
 .basket-modal {
-  -webkit-animation: slide-cart 0.5s forwards;
   animation: slide-cart 0.5s forwards;
   background-color: white;
   border: none;
@@ -13,45 +12,37 @@
   transform: translate(-50%, -50%);
   top: 0;
 }
-
-@-webkit-keyframes slide-cart {
-  100% {
-    top: 50%;
-  }
+.basket-modal h2 {
+  margin-bottom: 1.4rem;
 }
-
 @keyframes slide-cart {
   100% {
     top: 50%;
   }
 }
-
-.basket-modal h2 {
-  margin-bottom: 1.4rem;
-}
-
 .modal-header {
   align-items: center;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   margin-bottom: 2rem;
 }
 
 .cart-item {
   align-items: center;
-  border-bottom: 0.5px solid #2c2c34;
   display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border-bottom: 0.5px solid #2c2c34;
   font-size: 1.2rem;
   gap: 1rem;
   margin: auto;
   margin-bottom: 1rem;
   width: 60rem;
 }
-
 .cart-item strong:first-child {
   margin-right: auto;
 }
-
 .cart-item button {
   width: 1.5rem;
 }
@@ -60,14 +51,13 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   margin-top: 4rem;
 }
-
 .cart-summary button {
   border-radius: 0.5rem;
   padding: 0.8rem;
 }
-
 .cart-summary button:hover {
   background-color: #2c2c34;
 }
@@ -79,8 +69,7 @@
   padding: 0.5rem;
   color: #2c2c34;
 }
-
 .cart-button:hover {
-  background-color: #a2a2ac;
+  background-color: #6e6e79;
   color: white;
-}
+}/*# sourceMappingURL=Basket.css.map */

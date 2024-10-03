@@ -1,24 +1,22 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import "./resets";
+@import "./variables";
 
 body {
-  background-color: #2c2c34;
+  background-color: colors(dark);
   color-scheme: dark;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {
   cursor: pointer;
-}
-button:focus {
-  outline: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .icon {
   cursor: pointer;
   margin: 2rem;
   width: 2rem;
-}/*# sourceMappingURL=index.css.map */
+}
