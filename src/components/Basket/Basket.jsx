@@ -5,7 +5,7 @@ import { ShopContext } from "../../store/shop-context";
 import cartImage from "../../assets/ui-images/cart.svg";
 import closeImage from "../../assets/ui-images/close-button-black.svg";
 import noResults from "../../assets/ui-images/no-results.svg";
-import "./Basket.css";
+import "./Basket.scss";
 
 const Basket = () => {
   const { cartItems, updateItemQuantity } = useContext(ShopContext);

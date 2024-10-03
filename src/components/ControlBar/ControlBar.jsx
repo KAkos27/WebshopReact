@@ -4,7 +4,7 @@ import Modal from "../Modal/Modal";
 import { ShopContext } from "../../store/shop-context";
 import controlBarIcon from "../../assets/ui-images/control-bar-icon.svg";
 import closeButton from "../../assets/ui-images/close-button-black.svg";
-import "./ControlBar.css";
+import "./ControlBar.scss";
 
 const ControlBar = () => {
   const [isControlBarOpen, setIsControlBarOpen] = useState(false);

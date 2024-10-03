@@ -1,6 +1,6 @@
 import Basket from "../Basket/Basket";
 import ControlBar from "../ControlBar/ControlBar";
-import "./Nav.css";
+import "./Nav.scss";
 
 const Nav = () => {
   return (

@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { ShopContext } from "../../store/shop-context.jsx";
 import noResults from "../../assets/ui-images/no-results.svg";
-import "./Items.css";
+import "./Items.scss";
 
 const Items = () => {
   const { baseItems, searchItem, addItemToCart } = useContext(ShopContext);
